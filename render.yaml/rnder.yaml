@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: blogapp
+    env: java
+    buildCommand: ./mvnw clean install -DskipTests
+    startCommand: java -jar target/*.jar
+    envVars:
+      - key: JAVA_VERSION
+        value: 19

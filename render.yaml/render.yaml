@@ -2,8 +2,9 @@ services:
   - type: web
     name: blogapp
     env: java
-    buildCommand: ./mvnw clean install -DskipTests
-    startCommand: java -jar target/*.jar
+    buildCommand: "./mvnw clean install"  # If you have mvnw
+    startCommand: "java -jar target/*.jar"
+    plan: free
     envVars:
-      - key: JAVA_VERSION
-        value: 19
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
